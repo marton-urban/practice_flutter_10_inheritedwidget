@@ -84,9 +84,9 @@ class StateInheritedWidget extends InheritedWidget {
     required this.stateWidget,
   });
 
-  static StateWidgetState of(BuildContext context) =>
-      (context.dependOnInheritedWidgetOfExactType<StateInheritedWidget>()!)
-          .stateWidget;
+  static StateWidgetState of(BuildContext context) => context
+      .dependOnInheritedWidgetOfExactType<StateInheritedWidget>()!
+      .stateWidget;
 
   @override
   bool updateShouldNotify(StateInheritedWidget oldWidget) =>
